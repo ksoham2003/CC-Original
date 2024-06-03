@@ -9,6 +9,7 @@ function EventPage() {
     const { id } = useParams();
     const { loginInfo } = useContext(Context);
     const [product, setProduct] = useState(null);
+    const [isRegistered, setIsRegistered] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -22,10 +23,25 @@ function EventPage() {
         fetchData();
     }, [id]);
 
+    useEffect(() => {
+        if (loginInfo) {
+            async function checkRegistration() {
+                try {
+                    const response = await axios.post("http://localhost:8080/api/v1/auth/check-registration", { eventId: id, userId: loginInfo?._id });
+                    setIsRegistered(response.data.isRegistered);
+                } catch (error) {
+                    console.error("Error checking registration:", error);
+                }
+            }
+            checkRegistration();
+        }
+    }, [id, loginInfo]);
+
     async function bookNowFunc() {
         try {
             const response = await axios.post("http://localhost:8080/api/v1/auth/book", { eventId: id, userId: loginInfo?._id });
             alert(response.data.message);
+            setIsRegistered(true); // Update state after successful booking
         } catch (error) {
             console.error("Error booking event:", error);
         }
@@ -60,13 +76,17 @@ function EventPage() {
                 <div className="event-desc-div">
                     {product.description}
                 </div>
-                {loginInfo ?
+                {loginInfo ? (
                     <div className="event-btn-div">
-                        <span onClick={bookNowFunc} className="event-btn">Book Now</span>
+                        {isRegistered ? (
+                            <span className="event-btn-disabled">Already Registered</span>
+                        ) : (
+                            <span onClick={bookNowFunc} className="event-btn">Book Now</span>
+                        )}
                     </div>
-                    :
+                ) : (
                     <center style={{ marginTop: 20 }}>Login To Book</center>
-                }
+                )}
             </div>
         </>
     );

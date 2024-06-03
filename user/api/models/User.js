@@ -31,9 +31,10 @@ const userSchema = new mongoose.Schema({
     },
     enrolled: [
         {
-            type: Object,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Event'
         }
     ]
-})
+});
 
 module.exports = mongoose.model("User", userSchema);

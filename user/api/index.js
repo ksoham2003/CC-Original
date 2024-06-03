@@ -13,8 +13,9 @@ const PORT = process.env.PORT || 8080;
 
 const AuthRoutes = require('./routes/Auth');
 
+// Routes
 app.use("/api/v1/auth", AuthRoutes);
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server Started at PORT: ${PORT}`);
-})
+});

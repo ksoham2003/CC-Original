@@ -1,0 +1,60 @@
+.event-page-main-div {
+    padding: 20px;
+}
+
+.event-page-heading {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.event-section1-div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.event-image {
+    max-width: 50%;
+    height: auto;
+}
+
+.event-section2-div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.event-detail1 {
+    font-size: 18px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px; /* Set a fixed width for all boxes */
+    height: 100px; /* Set a fixed height for all boxes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-desc-div {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.event-btn-div {
+    text-align: center;
+}
+
+.event-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.event-btn:hover {
+    background-color: #0056b3;
+}

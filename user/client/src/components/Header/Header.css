@@ -1,0 +1,27 @@
+.header-img{
+    width: auto;
+    height: 100px;
+}
+
+.header-main-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.profile-icon{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.dropdown-img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.account-img{
+    width: 100px;
+    height: auto;
+}

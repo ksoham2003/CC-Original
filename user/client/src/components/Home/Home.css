@@ -75,3 +75,61 @@ p {
     text-align: center;
     padding: 0px 100px;
 }
+
+
+.home-section2-div ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.home-section2-div ul li {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.ant-carousel .slick-slide {
+    text-align: center;
+}
+
+.ant-card {
+    transition: transform 0.2s;
+}
+
+.ant-card:hover {
+    transform: scale(1.05);
+}
+
+.ant-card-cover img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.ant-card-meta-title {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.ant-card-meta-description {
+    font-size: 1.1em;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .home-section-heading {
+        font-size: 1.5em;
+    }
+
+    .home-section2-div {
+        padding: 0 10px;
+    }
+
+    .ant-card {
+        width: 100% !important;
+    }
+
+    .home-section2-div ul li {
+        font-size: 1em;
+    }
+}
